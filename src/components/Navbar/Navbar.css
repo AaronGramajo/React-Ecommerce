@@ -60,12 +60,3 @@
 .link :hover {
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 2px 2px 2px rgba(206,89,55,0);
 }
-
-.icono-cart {
-    color: white;
-    font-size: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    animation-duration: 1s;
-    animation-iteration-count: 2;
-}

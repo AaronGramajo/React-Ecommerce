@@ -1,8 +1,8 @@
 import React from 'react'
 import './Navbar.css'
+import {CartWidget} from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
-import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../assets/logo_invert.jpg'
 
@@ -37,7 +37,7 @@ export const Navbar = () => {
                     </ul>
                     </div>
                     <div>
-                    <FontAwesomeIcon className='icono-cart' icon={faShoppingCart} bounce/>
+                    <CartWidget/>
                     </div>
                 </div>
             </header>
