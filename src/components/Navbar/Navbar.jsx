@@ -36,9 +36,7 @@ export const Navbar = () => {
                         <li className='link'><a className='linkA' href="/">ARMA TU PC</a></li>
                     </ul>
                     </div>
-                    <div>
                     <CartWidget/>
-                    </div>
                 </div>
             </header>
         </div>
