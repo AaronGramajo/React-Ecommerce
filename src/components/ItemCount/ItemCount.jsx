@@ -19,10 +19,7 @@ export const ItemCount = ({ inicial, stock, onAdd}) => {
 
     return (
     <div className='contenedorItemCount'>
-        <div className='contenedorItem'>
-            <div className='contenedorItemDesc'>
-            <p>foto de producto</p>
-            </div>
+        <div className='contenedorBotones'>
             <div className='contenedorBotonCantidad'>
                 <button className='botonMenos botonContador' id='botonMenos' onClick={restar}>-</button>
                 <span id='cantidad'> {cantidad} </span>

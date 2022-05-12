@@ -1,8 +1,3 @@
-.saludo1 {
-    color: blue;
-}
-
-.saludo2 {
-    color: red;
-    font-size: 30px;
+.contenedorItemListContainer {
+    margin: 0 20px 0 20px;
 }
