@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar/Navbar';
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
+import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <ItemListContainer greetings= {greeting} lista= {miLista}/>
+      <ItemDetailContainer/>
     </div>
   );
 }

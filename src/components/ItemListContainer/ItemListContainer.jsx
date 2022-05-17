@@ -1,9 +1,6 @@
-import React from 'react'
 import './ItemListContainer.css'
 import { ItemList } from '../ItemList/ItemList'
-import { useEffect, useState } from 'react'
-//tengo que importar un json despues parsearlo en miPromesa
-//crear una carpeta json
+import React, { useEffect, useState } from 'react'
 
 export const ItemListContainer = () => {
 

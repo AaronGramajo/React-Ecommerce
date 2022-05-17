@@ -1,0 +1,38 @@
+.contenedorItemDetail {
+    margin: 0 10px 0 10px;
+}
+
+.contenedorDetail {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contenedorFoto {
+    min-width: 300px;
+}
+
+.imagenDeProducto {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.contenedorBody {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.productName {
+    margin-bottom: 10px;
+}
+
+.productPrice {
+    margin-bottom: 10px;
+}
+
+.productDescription {
+    margin-bottom: 10px;
+}
