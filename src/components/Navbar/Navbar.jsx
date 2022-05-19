@@ -1,10 +1,11 @@
 import React from 'react'
 import './Navbar.css'
-import {CartWidget} from '../CartWidget/CartWidget'
+import { CartWidget } from '../CartWidget/CartWidget'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
-import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../assets/logo_invert.jpg'
+import { Link, NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
     return (
@@ -12,15 +13,17 @@ export const Navbar = () => {
             <header className='NavBar'>
                 <div className='top-nav'>
                     <div className='container-icono'>
-                        <img className='logo_invert' src={Logo} alt="" />
+                        <Link to='/'>
+                            <img className='logo_invert' src={Logo} alt="" />
+                        </Link>
                     </div>
                     <div className='container-input'>
-                        <input type="text" className='input-search' id='input-search'  placeholder='Buscar producto'/>
+                        <input type="text" className='input-search' id='input-search' placeholder='Buscar producto' />
                         <button><FontAwesomeIcon className='icono-magni' icon={faMagnifyingGlass} /></button>
                     </div>
                     <div className='container-social'>
                         <div className='container-whatsapp'>
-                        <FontAwesomeIcon className='whatsapp-icon' icon={faWhatsapp} />
+                            <FontAwesomeIcon className='whatsapp-icon' icon={faWhatsapp} />
                         </div>
                         <div className='container-extra'>
                             +543515105255
@@ -29,14 +32,14 @@ export const Navbar = () => {
                 </div>
                 <div className='bottom-nav'>
                     <div className='container-links'>
-                    <ul className='links'>
-                        <li className='link'><a className='linkA' href="/">HOME</a></li>
-                        <li className='link'><a className='linkA' href="/">CATÁLOGO</a></li>
-                        <li className='link'><a className='linkA' href="/">CONTACTO</a></li>
-                        <li className='link'><a className='linkA' href="/">ARMA TU PC</a></li>
-                    </ul>
+                        <ul className='links'>
+                            <li className='link'><NavLink to={'/'} className='linkA' >HOME</NavLink></li>
+                            <li className='link'><NavLink to={`/categoria/MotherBoards`} className='linkA' >MOTHERS</NavLink></li>
+                            <li className='link'><NavLink to={`/categoria/Procesadores`} className='linkA' >PROCESADORES</NavLink></li>
+                            <li className='link'><NavLink to={'/'} className='linkA' >ARMA TU PC</NavLink></li>
+                        </ul>
                     </div>
-                    <CartWidget/>
+                    <CartWidget />
                 </div>
             </header>
         </div>
