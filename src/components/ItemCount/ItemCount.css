@@ -20,6 +20,7 @@
     border: 1px solid #ff9f00;
     border-radius: 9px;
     color: #ff9f00;
+    cursor: pointer;
 }
 
 .contenedorBotonCount {
