@@ -5,12 +5,12 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Cart } from './components/Cart/Cart';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-// import CartContextProvider from './context/CartContext';
+import CartContextProvider from './context/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <CartContextProvider> */}
+      <CartContextProvider>
         <div className="App">
           <Navbar />
           <Routes>
@@ -22,7 +22,7 @@ function App() {
             <Route path='/*' element={<Navigate to='/' />} />
           </Routes>
         </div>
-      {/* </CartContextProvider> */}
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
