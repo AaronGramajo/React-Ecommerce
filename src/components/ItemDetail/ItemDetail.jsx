@@ -5,7 +5,7 @@ import {ItemCount} from '../ItemCount/ItemCount'
 import { useCartContext } from '../../context/CartContext'
 
 export const ItemDetail = ({producto}) => {
-    const {addToCart, cartList} = useCartContext()
+    const {addToCart} = useCartContext()
 
     const [toCart,setToCart] = useState(false)
 
@@ -13,8 +13,6 @@ export const ItemDetail = ({producto}) => {
         addToCart({...producto, cantidad:cant})
         setToCart(true)
     }
-
-    console.log(cartList)
     
     return (
         <div className='contenedorItemDetail'>
