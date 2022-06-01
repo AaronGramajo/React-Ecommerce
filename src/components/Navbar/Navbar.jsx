@@ -6,11 +6,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../assets/logo_invert.jpg'
 import { Link, NavLink } from 'react-router-dom';
-import { useCartContext } from '../../context/CartContext';
 
 export const Navbar = () => {
-    const {totalQuantity} = useCartContext()
-
     return (
         <div className='header-wrapper'>
             <header className='NavBar'>
@@ -43,7 +40,6 @@ export const Navbar = () => {
                         </ul>
                     </div>
                     <CartWidget />
-                    {totalQuantity() !== 0 && totalQuantity()}
                 </div>
             </header>
         </div>

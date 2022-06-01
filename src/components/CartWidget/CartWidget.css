@@ -1,3 +1,11 @@
+.contenedorCartWidget{
+    display: flex;
+    align-items: center;
+    color: #ff9f00;
+    font-size: large;
+    font-weight: 500;
+}
+
 .icono-cart {
     color: white;
     font-size: 25px;
