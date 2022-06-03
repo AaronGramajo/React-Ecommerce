@@ -1,11 +1,13 @@
 import React from 'react'
-import './Navbar.css'
-import { CartWidget } from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+
+import { CartWidget } from '../CartWidget/CartWidget'
 import Logo from '../../assets/logo_invert.jpg'
-import { Link, NavLink } from 'react-router-dom';
+
+import './Navbar.css'
 
 export const Navbar = () => {
     return (

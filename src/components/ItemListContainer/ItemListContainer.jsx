@@ -1,8 +1,10 @@
-import './ItemListContainer.css'
-import { ItemList } from '../ItemList/ItemList'
 import React, { useEffect, useState } from 'react'
-import { fetchData } from '../../helpers/fetchData'
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
+
+import { ItemList } from '../ItemList/ItemList'
+
+import './ItemListContainer.css'
 
 export const ItemListContainer = () => {
 
@@ -11,17 +13,13 @@ export const ItemListContainer = () => {
     const { itemCategoria } = useParams()
 
     useEffect(() => {
-        if (itemCategoria) {
-            fetchData()
-                .then(respuesta => setProductos(respuesta.filter((prods) => prods.categoria === itemCategoria)))
-                .catch(console.error())
-                .finally(() => setLoading(false))
-        } else {
-            fetchData()
-                .then(respuesta => setProductos(respuesta))
-                .catch(console.error())
-                .finally(() => setLoading(false))
-        }
+        const db = getFirestore()
+        const queryCollection = collection(db, 'Items')
+        const queryCollectionFilter = itemCategoria ? query(queryCollection, where('category', '==', itemCategoria)) : queryCollection
+        getDocs(queryCollectionFilter)
+        .then(resp => setProductos( resp.docs.map(item => ( {id: item.id, ...item.data() } ) ) ) )
+        .catch(console.error())
+        .finally(() => setLoading(false))
     }, [itemCategoria])
 
     return (

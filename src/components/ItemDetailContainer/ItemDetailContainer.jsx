@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import {getFirestore , doc, getDoc} from 'firebase/firestore'
 import './ItemDetailContainer.css'
-import { fetchData } from '../../helpers/fetchData'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
@@ -10,12 +10,13 @@ export const ItemDetailContainer = () => {
     const {detailId} = useParams()
 
     useEffect(() => {
-        fetchData(detailId)
-        .then(respuesta=>setProducto(respuesta))
-        .catch((err) => console.log(err))
+        const db = getFirestore()
+        const dbQuery = doc(db, 'Items', detailId)
+        getDoc(dbQuery)
+        .then(resp => setProducto( {id: resp.id, ...resp.data()} ))
+        .catch(console.error())
         .finally(() => setLoading(false))
-    },[])
-
+    }, [])
 
     return (
         <div className='contenedorItemDetailContainer'>
