@@ -1,12 +1,12 @@
-import React from 'react'
-import './ItemCount.css'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-export const ItemCount = ({ inicial, stock, onAdd}) => {
+import './ItemCount.css'
+
+export const ItemCount = ({ inicial, maxStock, onAdd}) => {
     let [cantidad, setCantidad] = useState(inicial)
 
     const aumentar = () => {
-        if (cantidad < stock ) {
+        if (cantidad < maxStock ) {
             setCantidad(cantidad + 1)
         }
     }
@@ -22,15 +22,12 @@ export const ItemCount = ({ inicial, stock, onAdd}) => {
         <div className='contenedorBotones'>
             <div className='contenedorBotonCantidad'>
                 <button className='botonMenos botonContador' id='botonMenos' onClick={restar}>-</button>
-                <span id='cantidad'> {cantidad} </span>
+                <span> {cantidad} </span>
                 <button className='botonMas botonContador' id='botonMas' onClick={aumentar}>+</button>
             </div>
         </div>
         <div className='contenedorBotonCount'>
             <button className='botonAgregarCarrito' onClick={()=>onAdd(cantidad)}>Agregar al carrito</button>
-        </div>
-        <div className={(stock !== 0) ? 'contenedorStock' : 'contenedorOutOfStock'}>
-        <span className='stock'>stock disponible {stock}</span>
         </div>
     </div>
     )

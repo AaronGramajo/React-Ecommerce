@@ -1,10 +1,13 @@
 import React from 'react'
-import './Cart.css'
-import { useCartContext } from '../../context/CartContext'
 import { Link } from "react-router-dom"
 
+import { useCartContext } from '../../context/CartContext'
+import { CartList } from '../CartList/CartList'
+
+import './Cart.css'
+
 export const Cart = () => {
-    const { cartList, vaciarCarrito, eliminarItem, totalPrice } = useCartContext()
+    const { cartList } = useCartContext()
     return (
         <div className='contenedorCart'>
             {cartList.length === 0
@@ -17,37 +20,7 @@ export const Cart = () => {
                     </Link>
                 </div>
                 :
-                <>
-                    <div>
-                        <h2>Tu Pedido</h2>
-                    </div>
-                    <table className='checkOutTable'>
-                        <thead className='tableHead line'>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Accion</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {cartList.map(producto =>
-                                <tr className='line' key={producto.id} >
-                                    <td>{producto.title}</td>
-                                    <td>{producto.cantidad}</td>
-                                    <td><button className='buttonDeleteItem' onClick={() => eliminarItem(producto.id)}>X</button></td>
-                                    <td>{producto.price}</td>
-                                </tr>)}
-                        </tbody>
-                        <tfoot >
-                            <tr>
-                                <th>Total: $ {totalPrice()} </th>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <button className='buttonFinishPurchase'>Terminar mi compra!</button>
-                    <button className='buttonDeleteAllProducts' onClick={vaciarCarrito}>Vaciar carrito</button>
-                </>
+                <CartList/>
             }
         </div>
     )

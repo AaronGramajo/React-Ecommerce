@@ -3,9 +3,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 300px;
+    flex-basis: 300px;
     height: 400px;
     border: 2px solid black;
+}
+
+.contenedorItem:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 300ms;
 }
 
 .card-img-top {
