@@ -50,7 +50,7 @@ export const FormOrders = () => {
             const batch = writeBatch(db)
 
             order.items.map(el => {
-                let updateDoc = doc(db, 'items', el.id)
+                let updateDoc = doc(db, 'Items', el.id)
                 let currentStock = cartList.find(item => item.id === el.id).stock
 
                 batch.update(updateDoc, {

@@ -24,8 +24,8 @@ export const ItemDetail = ({ producto }) => {
                     <div className='productName'>{producto.title}</div>
                     <div className='productPrice'>${producto.price}</div>
                     <div className='productDescription'>{producto.description}</div>
-                    <div className={(producto.stock !== 0) ? 'contenedorStock' : 'contenedorOutOfStock'}>
-                        <span className='stock'>stock disponible {producto.stock}</span>
+                    <div className={(producto.stock > 0) ? 'contenedorStock' : 'contenedorOutOfStock'}>
+                        {(producto.stock > 0) ? <span className='stock'>stock disponible {producto.stock}</span> : <span className='stock'>no hay mas stock</span>}
                     </div>
 
                     {!toCart
