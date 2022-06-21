@@ -14,7 +14,7 @@ export const Navbar = () => {
         <div className='header-wrapper'>
             <header className='NavBar'>
                 <div className='top-nav'>
-                    <div className='container-icono'>
+                    <div className='container-icon'>
                         <Link to='/'>
                             <img className='logo_invert' src={Logo} alt="" />
                         </Link>
@@ -36,9 +36,9 @@ export const Navbar = () => {
                     <div className='container-links'>
                         <ul className='links'>
                             <li className='link'><NavLink to={'/'} className='linkA' >HOME</NavLink></li>
-                            <li className='link'><NavLink to={`/categoria/MotherBoards`} className='linkA' >MOTHERS</NavLink></li>
-                            <li className='link'><NavLink to={`/categoria/Procesadores`} className='linkA' >PROCESADORES</NavLink></li>
-                            <li className='link'><NavLink to={'/'} className='linkA' >ARMA TU PC</NavLink></li>
+                            <li className='link'><NavLink to={`/category/MotherBoards`} className='linkA' >MOTHERS</NavLink></li>
+                            <li className='link'><NavLink to={`/category/Procesadores`} className='linkA' >PROCESADORES</NavLink></li>
+                            <li className='link'><NavLink to={'/error404'} className='linkA' >ARMA TU PC</NavLink></li>
                         </ul>
                     </div>
                     <CartWidget />

@@ -7,39 +7,34 @@
 }
 
 .line {
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 2px solid black;
 }
 
 td {
-    border: 1px solid #dddddd;
+    border: 2px solid black;
     text-align: left;
     padding: 30px;
+    font-size: 17px;
+    font-weight: bold;
 }
 
 th {
-    font-size: large;
+    font-size: larger;
     padding: 25px;
 }
 
 tr:nth-child(even) {
-    background-color: #ff9f00;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .buttonDeleteItem{
-    background-color: red;
+    background-color: rgb(228, 13, 13);
 }
 
 tfoot{
     margin-bottom: 10px;
 }
 
-.buttonFinishPurchase {
-    background-color: lightgreen;
-    font-size: large;
-}
-
 .buttonDeleteAllProducts{
     margin-left: 20px;
-    background-color: hotpink;
-    font-size: large;
 }

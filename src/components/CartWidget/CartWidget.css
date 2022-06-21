@@ -1,4 +1,4 @@
-.contenedorCartWidget{
+.cartWidgetContainer{
     display: flex;
     align-items: center;
     color: #ff9f00;
@@ -6,7 +6,7 @@
     font-weight: 500;
 }
 
-.icono-cart {
+.cart-icon {
     color: white;
     font-size: 25px;
     padding: 10px 20px;

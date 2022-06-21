@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useCartContext } from '../../context/CartContext'
+import { Loader } from '../Loader/Loader'
 
+import './FormOrders.css'
 
 export const FormOrders = () => {
     const [orderId, setOrderId] = useState('')
@@ -29,9 +31,9 @@ export const FormOrders = () => {
             const id = cartItem.id
             const name = cartItem.title
             const price = cartItem.price
-            const quantity = cartItem.cantidad
-            const toalPrice = cartItem.price * cartItem.cantidad
-            return { id, name, quantity, price, toalPrice }
+            const quantity = cartItem.quantity
+            const totalPrice = cartItem.price * cartItem.quantity
+            return { id, name, quantity, price, totalPrice }
         })
 
         const db = getFirestore()
@@ -62,11 +64,12 @@ export const FormOrders = () => {
     }
 
     return (
-        <div className='contenedorForm'>
+        <div className='formContainer'>
             {creatingOrder
                 ?
                 <div>
                     <h1>Procesando su orden...</h1>
+                    <Loader />
                 </div>
                 :
                 orderId
@@ -75,31 +78,38 @@ export const FormOrders = () => {
                         <h2>Gracias por su compra!</h2>
                         <h3> Su ID de compra es {orderId} </h3>
                         <Link to='/'>
-                            <button className='homeButton'>Volver al home</button>
+                            <button className='homeButton btn'><span className='btn-text'>Volver al home</span></button>
                         </Link>
                     </div>
                     :
-                    <form className='formBuyer' action="" onSubmit={creatOrder} onChange={handleChange}>
-                        <div className='contenedorLabelInput'>
-                            <label className='formLabel' >Nombre</label>
-                            <input type="name" name="name" placeholder='Scooby' defaultValue={formData.name} required />
+                    <div className='formContainer'>
+                        <div>
+                            <h1>Porfavor Complete los datos</h1>
+                            <h2>para completar su compra</h2>
                         </div>
-                        <div className='contenedorLabelInput'>
-                            <label className='formLabel' >Apellido</label>
-                            <input type="name" name="lastName" placeholder='Doo' defaultValue={formData.lastName} required />
-                        </div>
-                        <div className='contenedorLabelInput'>
-                            <label className='formLabel' >Telefono</label>
-                            <input type="telefone" name="phone" placeholder='15xxxxxxxxxx' defaultValue={formData.phone} required />
-                        </div>
-                        <div className='contenedorLabelInput'>
-                            <label className='formLabel' >Email</label>
-                            <input type="email" name="email" placeholder='ScoobyDoo@galletas.com' defaultValue={formData.email} required />
-                        </div>
-                        <button className='botonFinalizarCompra' disabled={!formData.name || !formData.lastName || !formData.phone || !formData.email || cartList.length === 0}>
-                            Finalizar Compra
-                        </button>
-                    </form>
+                        <form className='formBuyer' action="" onSubmit={creatOrder} onChange={handleChange}>
+                            <div className='labelInputContainer'>
+                                <label className='formLabel' >Nombre</label>
+                                <input type="name" name="name" placeholder='Scooby' defaultValue={formData.name} required />
+                            </div>
+                            <div className='labelInputContainer'>
+                                <label className='formLabel' >Apellido</label>
+                                <input type="name" name="lastName" placeholder='Doo' defaultValue={formData.lastName} required />
+                            </div>
+                            <div className='labelInputContainer'>
+                                <label className='formLabel' >Telefono</label>
+                                <input type="telefone" name="phone" placeholder='15xxxxxxxxxx' defaultValue={formData.phone} required />
+                            </div>
+                            <div className='labelInputContainer'>
+                                <label className='formLabel' >Email</label>
+                                <input type="email" name="email" placeholder='ScoobyDoo@galletas.com' defaultValue={formData.email} required />
+                            </div>
+                            <button className='finishPurchaseButton btn' disabled={!formData.name || !formData.lastName || !formData.phone || !formData.email || cartList.length === 0}>
+                                <span className='btn-text'>Finalizar Compra</span>
+                            </button>
+                        </form>
+
+                    </div>
             }
         </div>
     )

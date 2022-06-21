@@ -1,0 +1,40 @@
+.footer {
+    background-color: black;
+    color: white;
+}
+
+.copyright {
+    height: 30px;
+}
+
+.aboutSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.informationSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.information {
+    padding: 0;
+    list-style: none;
+    
+}
+
+.link-footer {
+    padding-bottom: 10px;
+}
+
+.social-Icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100px;
+}
+
+.facebook-icon {
+    height: 25px;
+}

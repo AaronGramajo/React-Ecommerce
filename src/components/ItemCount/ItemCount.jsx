@@ -2,32 +2,32 @@ import React, { useState } from 'react'
 
 import './ItemCount.css'
 
-export const ItemCount = ({ inicial, maxStock, onAdd}) => {
-    let [cantidad, setCantidad] = useState(inicial)
+export const ItemCount = ({ initial, maxStock, onAdd}) => {
+    let [quantity, setQuantity] = useState(initial)
 
-    const aumentar = () => {
-        if (cantidad < maxStock ) {
-            setCantidad(cantidad + 1)
+    const increase = () => {
+        if (quantity < maxStock ) {
+            setQuantity(quantity + 1)
         }
     }
 
-    function restar() {
-        if (cantidad > 1) {
-            setCantidad(cantidad - 1)
+    function decrease() {
+        if (quantity > 1) {
+            setQuantity(quantity - 1)
         }
     }
 
     return (
-    <div className='contenedorItemCount'>
-        <div className='contenedorBotones'>
-            <div className='contenedorBotonCantidad'>
-                <button className='botonMenos botonContador' id='botonMenos' onClick={restar}>-</button>
-                <span> {cantidad} </span>
-                <button className='botonMas botonContador' id='botonMas' onClick={aumentar}>+</button>
+    <div className='itemCountContainer'>
+        <div className='buttonContainer'>
+            <div className='buttonQuantityContainer'>
+                <button className='minusButton buttonCounter' onClick={decrease}>-</button>
+                <span> {quantity} </span>
+                <button className='plusButton buttonCounter' onClick={increase}>+</button>
             </div>
         </div>
-        <div className='contenedorBotonCount'>
-            <button disabled={maxStock <= 0} className='botonAgregarCarrito' onClick={()=>onAdd(cantidad)}>Agregar al carrito</button>
+        <div className='buttonCountContainer'>
+            <button disabled={maxStock <= 0} className='addToCartButton btn rounded' onClick={()=>onAdd(quantity)}> <span className='text-btn'>Agregar al carrito</span> </button>
         </div>
     </div>
     )

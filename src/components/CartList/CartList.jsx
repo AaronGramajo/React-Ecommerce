@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import './CartList.css'
 
 export const CartList = () => {
-    const { cartList, emptyCart, eliminarItem, totalPrice } = useCartContext()
+    const { cartList, emptyCart, deleteItem, totalPrice } = useCartContext()
     return (
-        <div className='contenedorCartList'>
+        <div className='cartListContainer'>
             <div>
                 <h2>Tu Pedido</h2>
             </div>
@@ -21,12 +21,12 @@ export const CartList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {cartList.map(producto =>
-                        <tr className='line' key={producto.id} >
-                            <td>{producto.title}</td>
-                            <td>{producto.cantidad}</td>
-                            <td><button className='buttonDeleteItem' onClick={() => eliminarItem(producto.id)}>X</button></td>
-                            <td>{producto.price}</td>
+                    {cartList.map(product =>
+                        <tr className='line' key={product.id} >
+                            <td>{product.title}</td>
+                            <td>{product.quantity}</td>
+                            <td><button className='buttonDeleteItem' onClick={() => deleteItem(product.id)}>X</button></td>
+                            <td>{product.price}</td>
                         </tr>)}
                 </tbody>
                 <tfoot >
@@ -36,9 +36,9 @@ export const CartList = () => {
                 </tfoot>
             </table>
             <Link to='/checkOut'>
-            <button className='buttonFinishPurchase'>Terminar mi compra!</button>
+            <button className='buttonFinishPurchase btn rounded'><span className='btn-text'>Terminar mi compra!</span></button>
             </Link>
-            <button className='buttonDeleteAllProducts' onClick={emptyCart}>Vaciar carrito</button>
+            <button className='buttonDeleteAllProducts btn rounded' onClick={emptyCart}><span className='btn-text'>Vaciar carrito</span></button>
         </div>
     )
 }

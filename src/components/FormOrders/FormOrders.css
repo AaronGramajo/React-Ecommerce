@@ -1,0 +1,22 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.formBuyer {
+    margin: 20px;
+}
+
+.labelInputContainer {
+    padding-bottom: 20px;
+}
+
+.formLabel {
+    font-size: larger;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.finishPurchaseButton {
+    background-color: white;
+}

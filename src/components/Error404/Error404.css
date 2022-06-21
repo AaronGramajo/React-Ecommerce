@@ -1,0 +1,31 @@
+.error404container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.imageContainer {
+    width: 520px;
+    height: 441px;
+}
+
+.dogeStonksGif {
+    height: 461px;
+}
+
+.oopsText {
+    font-size: 55px;
+}
+
+.cantFindText {
+    font-size: 25px;
+}
+
+.findUsHereText {
+    font-size: large;
+    font-weight: bold;
+}
+
+.goBackButton {
+    margin-top: 30px;
+}

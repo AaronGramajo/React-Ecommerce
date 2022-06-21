@@ -1,43 +1,47 @@
 import React, { useState } from 'react'
-import './ItemDetail.css'
 import { Link } from 'react-router-dom'
-import { ItemCount } from '../ItemCount/ItemCount'
-import { useCartContext } from '../../context/CartContext'
 
-export const ItemDetail = ({ producto }) => {
+import { useCartContext } from '../../context/CartContext'
+import { ItemCount } from '../ItemCount/ItemCount'
+
+import './ItemDetail.css'
+
+export const ItemDetail = ({ product }) => {
     const { addToCart } = useCartContext()
 
     const [toCart, setToCart] = useState(false)
 
-    const onAdd = (cant) => {
-        addToCart({ ...producto, cantidad: cant })
+    const onAdd = (quantity) => {
+        addToCart({ ...product, quantity: quantity })
         setToCart(true)
     }
 
     return (
-        <div className='contenedorItemDetail'>
-            <div className='contenedorDetail'>
-                <div className='contenedorFoto'>
-                    <img src={producto.photo} alt="" className='imagenDeProducto' />
+        <div className='itemDetailsContainer'>
+            <div>
+                <div className='photoContainer'>
+                    <img src={product.photo} alt="" className='imageOfProduct' />
                 </div>
-                <div className='contenedorBody'>
-                    <div className='productName'>{producto.title}</div>
-                    <div className='productPrice'>${producto.price}</div>
-                    <div className='productDescription'>{producto.description}</div>
-                    <div className={(producto.stock > 0) ? 'contenedorStock' : 'contenedorOutOfStock'}>
-                        {(producto.stock > 0) ? <span className='stock'>stock disponible {producto.stock}</span> : <span className='stock'>no hay mas stock</span>}
+            </div>
+            <div className='detailContainer'>
+                <div className='bodyContainer'>
+                    <div className='productName'>{product.title}</div>
+                    <div className='productPrice'>${product.price}</div>
+                    <div className='productDescription'>{product.description}</div>
+                    <div className={(product.stock > 0) ? 'inStockContainer' : 'outOfStockContainer'}>
+                        {(product.stock > 0) ? <span className='stock'>stock disponible {product.stock}</span> : <span className='stock'>no hay mas stock</span>}
                     </div>
 
                     {!toCart
                         ?
-                        <ItemCount inicial={1} maxStock={producto.stock} onAdd={onAdd} />
+                        <ItemCount initial={1} maxStock={product.stock} onAdd={onAdd} />
                         :
-                        <div className='bottonsToCart'>
+                        <div className='toCartButton'>
                             <Link to={'/cart'}>
-                                <button className='buttonCart'>Ir al carrito</button>
+                                <button className='buttonCart btn rounded'><span className='text-btn'>Ir al carrito</span></button>
                             </Link>
                             <Link to={'/'}>
-                                <button className='buttonHome'>Seguir comprando</button>
+                                <button className='buttonHome btn rounded'><span className='text-btn'>Seguir comprando</span></button>
                             </Link>
                         </div>}
                 </div>
