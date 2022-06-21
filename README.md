@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# **Proyecto Ecommerce React** 
+# *Curso de React dictado por Coderhouse*
+### **Aaron Gramajo**
+### **Contacto:**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![LinkedId](https://img.shields.io/badge/LinkedIn-informational?style=for-the-badge&logo=linkedin&logoColor=fff&color=23272d)](https://https://www.linkedin.com/in/aaron-gramajo-066418239/)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-informational?style=for-the-badge&logo=GitHub&logoColor=fff&color=23272d)](https://github.com/AaronGramajo)
 
-## Available Scripts
+# *Info:*
 
-In the project directory, you can run:
+Este es el proyecto final del curso dictado por [CoderHouse](https://www.coderhouse.com) de React Js de la carrera Front-End.
+Se trata sobre un Ecommerce, el cual está creado con React.
+Se implementa React.js con React Router, React Hooks, y Firebase.
 
-### `npm start`
+Ademas los productos al realizar la compra se descuentan del stock almacenado en Firebase, actualizandose en tiempo real segun la cantidad vendida.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dependencias que use : FontAwesome (React-Fontawesome, fontawesome svg core, free-brands-svg-icons, free-regular-svg-icons, free-solid-svg-icons), firebase, react dom, react-router-dom, y React (Hooks (useState, useContext, ect..)).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## *Version Final:*
+Link a Netlify del proyecto: 
+- [![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://dogetech.netlify.app/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+**Capturas de pantalla:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Home:
+## ![](./src/assets/Home.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Detalle del producto seleccionado:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ![](./src/assets/itemDetail.png)
 
-### `npm run eject`
+### 3. Carrito de compras, con productos seleccionados:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ![](./src/assets/Cart.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Formulario para realizar la compra:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ![](./src/assets/Form.png)
+### 5. Compra finalizada con éxito:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ![](./src/assets/FinishPurchase.png)
 
-## Learn More
+**Gif de como funciona:**
+## ![](./src/assets/HowItsDone.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Para poder usar el proyecto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Seguir los siguientes pasos:
 
-### Code Splitting
+- Clonar el repositorio de GitHub:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```bash
+  git clone https://github.com/AaronGramajo/React-Ecommerce.git
+  ```
 
-### Analyzing the Bundle Size
+- cd dentro del directorio de la carpeta:
+  ```bash
+  cd proyecto_ecommerce_
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Instala las dependencias.
+  ```bash
+  npm install
+  ```
 
-### Making a Progressive Web App
+- Para correr el proyecto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ```bash
+  npm start
+  ```
